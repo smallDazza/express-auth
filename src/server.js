@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 
-const authRoutes = require("./routes/authRoutes");
+const authRoutes = require("./routes/authRoute");
 const authRoutes = require("./routes/postRoutes");
 
 
