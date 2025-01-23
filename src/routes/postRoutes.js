@@ -1,8 +1,12 @@
 
 const express = require("express");
 const { getAllPosts, createPost } = require("../controllers/postController");
+const { validateToken } = require("../middlewares/authMiddleware");
 
 const router = express.Router();
+
+//use the validateToken middleware on this route
+router.use(validateToken);
 
 // GET localhost:5000/api/posts/
 router.get("/" ,getAllPosts);
