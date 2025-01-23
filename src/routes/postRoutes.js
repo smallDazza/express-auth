@@ -1,16 +1,13 @@
 
 const express = require("express");
+const { getAllPosts, createPost } = require("../controllers/postController");
 
 const router = express.Router();
 
 // GET localhost:5000/api/posts/
-router.get("/" ,() => {
-    console.log("This is a get all posts screen.");
-});
+router.get("/" ,getAllPosts);
 
 // POST localhost:5000/api/posts/
-router.post("/", () => {
-    console.log("This is a create a post screen.");
-});
+router.post("/", createPost);
 
 module.exports = router;
