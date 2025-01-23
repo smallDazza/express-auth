@@ -1,12 +1,14 @@
 
-const Post = require("../models/PostModel");
+const { Post } = require("../models/PostModel");
 
 // CRUD operations to be defined here....
 
 // Read - Get all posts
 async function getAllPosts(request, response) {
     try {
-        const posts = await Post.find({});
+        const posts = await Post.find({
+            user: request.authUserData.userId
+        });
         response.json(posts);
     } catch (error) {
         response
